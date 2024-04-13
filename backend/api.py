@@ -1,21 +1,9 @@
 from flask import Flask, request, jsonify
-
-# returns embeddings for the search query
-def generateQueryEmbeddings(text='', model='models/text-embedding-004'):
-    result = genai.embed_content(model=model,
-                                 content=text,
-                                 task_type='retrieval_query')
-    return result
-
-# returns embeddings for item we want to store
-def generateTextEmbeddings(text='', model='models/text-embedding-004'):
-    result = genai.embed_content(model=model,
-                                 content=text,
-                                 task_type='retrieval_document')
-    return result
+from textEmbedding import generateQueryEmbeddings
 
 @app.route('/', methods=['GET'])
 def fetchResource():
+    query = generateQueryEmbeddings(request.args.get('query', ''))
     return
 
 if __name__ == '__main__':
