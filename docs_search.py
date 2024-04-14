@@ -25,7 +25,7 @@ from chromadb import Documents, EmbeddingFunction, Embeddings
 import numpy as np
 import pandas as pd
 
-api_key = 'AIzaSyCB2vqDZPG-c5RoqEns1zJxzobfZISBlc8'#use this os.getenv('API_KEY'),in terminal set API_KEY=...
+api_key = ''#use this os.getenv('API_KEY'),in terminal set API_KEY=...
 genai.configure(api_key = api_key)
 
 
