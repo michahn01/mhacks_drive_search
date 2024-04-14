@@ -1,0 +1,186 @@
+.app {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+    'nav'
+    'main';
+  grid-template-rows: auto 1fr;
+}
+
+
+
+.logo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px; /* Set the height of the bar */
+  background-color: transparent;
+  padding-right: 20px; /* Add some padding on the right */
+}
+.logos-left, .logos-right {
+  display: flex;
+  align-items: center; /* Center logos vertically */
+}
+.logo {
+  height: 40px; /* Adjust based on your preference */
+  margin-left: 20px; /* Space between logos */
+}
+.logo-archive {
+  height: 60px; /* Adjust based on your preference */
+  margin-left: 20px; /* Space between logos */
+}
+.logo-gemini{
+  height: 120px;
+}
+.mount-button {
+  height: 30px;
+  margin-left: 20px;
+  background-color: #e67e22; /* Orange background */
+  color: white; /* White text, ensuring good contrast and readability */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0 20px; /* Horizontal padding */
+  font-weight: bold; /* Bold font */
+  font-size: 14px; /* Larger font size */
+  cursor: pointer; /* Cursor indicates button is clickable */
+  outline: none; /* Remove the outline to keep the modern look */
+  transition: background-color 0.3s, transform 0.1s; /* Smooth transition for hover effect */
+}
+
+.mount-button:hover {
+  background-color: orange; /* Slightly darker orange on hover for feedback */
+  transform: translateY(-2px); /* Slight upward movement for interactive feedback */
+}
+
+.mount-button:active {
+  transform: translateY(1px); /* Slight downward movement on click */
+}
+
+/* Main content layout with two equal sides */
+.main-content {
+  display: flex;
+  height: 100vh; /* or adjust based on your design needs */
+  align-items: flex-start; /* Aligns children at the start of the flex container */
+}
+.left-side {
+  flex: 1; /* Takes half the space if main-content is a flexbox with two children */
+  
+  align-items: center; /* Center content horizontally */
+  padding: 20px;
+  overflow-wrap: break-word; 
+  max-width: 600px; /* Example fixed max-width */
+  width: 100%; /* Ensures it takes up all available space up to max-width *//* Ensures text wraps inside the container */
+}
+.logo-power {
+  display: flex;        /* Enables flexbox layout */
+  align-items: center;  /* Vertically centers the children */
+  justify-content: flex-start; /* Aligns children to the start of the container */
+}
+
+.logo-power h1 { /* Adjust the tag as necessary if different from h1 */
+  margin-right: 10px; 
+  margin-left: 20px;/* Provides spacing between the text and the image */
+  font-size: 30px; /* Adjust the size as needed */
+  color: #e67e22; /* Set the color as needed */
+  font-weight: dense; /* Ensures the font weight is appropriate */
+}
+.example-prompt {
+  width: 100%; /* Takes the full width of its parent, the left-side container */
+  padding: 10px; /* Padding inside the example-prompt container */
+  box-sizing: border-box; /* Ensures padding does not add to the width */
+}
+
+.example-prompt h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:lighter;
+  word-wrap: break-word; /* Wraps text to a new line at the limit of the element's content area */
+  text-align: justify; /* Aligns the text for better readability and appearance */
+  margin-bottom: 10px; /* Adds space between multiple h2 tags */
+}
+.typing-animation p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  text-align: center;
+  white-space: pre-wrap; /* Allows wrapping and respects white spaces and newlines */
+  word-wrap: break-word; /* Break the word at the edge of the box */
+  width: 100%; /* Take full width of the container */
+}
+.right-side {
+  flex: 1; /* Each side takes up half the space */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically within each side */
+  padding: 20px; /* Spacing inside each side */
+}
+
+/* Specific styles for the right side */
+.search-form {
+  margin-top: 21px;
+  width: 87%; /* Full width of the container */
+  max-width: 5000px; /* Adjust max-width so that input and button can fit */
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 3px rgba(0,0,0,0.1);
+    display: flex;
+  align-items: center; /* Align items vertically in the center */
+  gap: 10px;
+}
+
+.search-input {
+  flex-grow: 1; /* Allows input to fill the available space */
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid black; /* Visible border */
+  background-color: transparent; /* Transparent background */
+  outline: none;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #e67e22;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none; /* No border for the button */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: orange;
+}
+.place-holder {
+  width: 85%; /* Same width as the search form */
+  height: 200px; /* Fixed height */
+  background-color: #f4f4f4; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px 3px rgba(0,0,0,0.1); /* Shadow like the form */
+  margin-top: 10px; /* Space between form and this div */
+  display: flex; /* Flex container */
+  flex-direction: column; /* Children stacked vertically */
+  justify-content: space-around; /* Evenly space children vertically */
+  align-items: flex-start; /* Align children to the left */
+  padding: 10px 20px; /* Padding inside the container, add left margin */
+  overflow: auto; /* Allows scrolling if content overflows */
+}
+
+
+.search-results {
+  width: 100%; /* Full width of the container */
+  margin: 5px 0; /* Margin around each link for spacing */
+  color: black; /* Text color */
+  font-size: 16px; /* Text size */
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+  display: block; /* Ensure the anchor uses full width for better click area */
+}
+
+
+
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
