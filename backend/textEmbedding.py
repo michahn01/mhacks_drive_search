@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-genai.configure(api_key = "AIzaSyCB2vqDZPG-c5RoqEns1zJxzobfZISBlc8")
+genai.configure(api_key = "")
 
 # returns embeddings for item we want to store
 def generateTextEmbeddings(text='', model='models/text-embedding-004'):
