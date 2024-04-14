@@ -1,7 +1,7 @@
 import google.generativeai as genai
 from PIL import Image
 
-genai.configure(api_key = "AIzaSyCB2vqDZPG-c5RoqEns1zJxzobfZISBlc8")
+genai.configure(api_key = "")
 
 def generateImageEmbeddings(img_path):
     prompt = "Generate 5 words that list objects in the image, and 5 words that capture more nuanced concepts/ideas in the image. List just the words, all on one line, with a space separating each word, no titles, no words or characters other than the 10 words"
