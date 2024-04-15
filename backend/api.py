@@ -6,6 +6,14 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
+# from pydrive2.auth import GoogleAuth
+# from pydrive2.drive import GoogleDrive
+
+# gauth = GoogleAuth('Credentials/settings.yaml')
+# gauth.service_account_json_file = 'client_secret.json' 
+# gauth.Authorize()
+# drive = GoogleDrive(gauth)
+
 def cosine_similarity(vec1, vec2):
     dot_product = np.dot(vec1, vec2)
     norm_vec1 = np.linalg.norm(vec1)
@@ -22,6 +30,8 @@ def fetchResource():
     for i in range(len(embeddings)):
         embedding = np.array(embeddings[i][0]['embedding'])
         file_path = embeddings[i][1]
+        #call api to get link here
+        # fi_list = drive.ListFile({'q':"'root' in parents and trashed=false"}).GetList()
         arr.append((cosine_similarity(embedding, query), file_path))
     arr.sort()
     print(len(arr))
